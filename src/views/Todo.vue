@@ -71,7 +71,7 @@ export default {
       };
       console.log('id: ' + newTask.id + 'List Length: '+this.tasks.length)
       this.tasks.push(newTask);
-      this.newTaskTitle = String;
+      this.newTaskTitle = '';
     },
   },
 };
