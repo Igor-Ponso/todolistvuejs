@@ -2,6 +2,7 @@
   <div class="home">
     <v-text-field
       v-model="newTaskTitle"
+      :rules="['Required']"
       @click:append="addTask"
       @keyup.enter="addTask"
       class="pa-3"
@@ -62,16 +63,14 @@ export default {
     },
     addTask() {
       var listLength = this.tasks.length;
-      console.log(listLength)
-      
+
       let newTask = {
-        id: listLength ++,
+        id: listLength++,
         title: this.newTaskTitle,
         done: false,
       };
-      console.log('id: ' + newTask.id + 'List Length: '+this.tasks.length)
       this.tasks.push(newTask);
-      this.newTaskTitle = '';
+      this.newTaskTitle = "";
     },
   },
 };
